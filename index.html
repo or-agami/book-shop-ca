@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book Shop</title>
+</head>
+
+<body onload="onInit()">
+
+    <h1>Book Shop</h1>
+    <div class="flex-container">
+        <div class="buttons">
+            <button class="add-book-button" onclick="onAddBook()">Create New Book</button>
+            <input type="text" class="search-input" oninput="onSetFilterBy({searchByTitle: this.value})" placeholder="Search by title" />
+            <button disabled class="prev-button" onclick="onPrevPage()">Prev Page</button>
+            <button class="next-button" onclick="onNextPage()">Next Page</button>
+        </div>
+        <hr>
+        <div class="filter-flex-container">
+            <section class="book-filter">
+                <h2>Filter</h2>
+                <label>
+                    Min Rate:
+                    <input type="range" min="0" max="10" value="0" class="filter-rate-range"
+                        onchange="this.title=this.value;onSetFilterBy({minRate: +this.value})" />
+                </label>
+                <label>
+                    Max Price:
+                    <input type="range" min="0" max="100" value="100" class="filter-price-range"
+                        onchange="this.title=this.value;onSetFilterBy({maxPrice: +this.value})" />
+                </label>
+            </section>
+        </div>
+        <hr>
+        <div class="sort-flex-container">
+            <section class="book-sort">
+                <h2>Sort</h2>
+                <select class="sort-by" onchange="onSetSortBy(this.value)">
+                    <option value="TITLE">Title</option>
+                    <option value="RATE">Rate</option>
+                </select>
+                <label>
+                    Descending
+                    <input class="sort-desc" type="checkbox" onclick="onSetSortBy('TITLE', this.checked)" />
+                </label>
+            </section>
+        </div>
+    </div>
+
+    <table class="table">
+
+    </table>
+
+    <div class="modal">
+    </div>
+
+    <div class="delete-notification">Deleted</div>
+
+    <script src="js/services/utils.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>

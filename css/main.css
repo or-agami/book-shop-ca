@@ -1,0 +1,161 @@
+body {
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+}
+
+.flex-container {
+    width: 80%;
+    display: flex;
+    margin: 1em auto;
+    margin-top: 10vh;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    justify-content: space-between;
+}
+
+.flex-container .buttons {
+    width: 20em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    height: 7em;
+    align-self: flex-end;
+    margin-bottom: 0.5em;
+}
+
+.flex-container .buttons button {
+    width: 48.7%;
+}
+
+.flex-container .buttons .add-book-button {
+    width: 100%;
+}
+
+.flex-container .buttons .search-input {
+    width: 100%;
+}
+
+
+.filter-flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+}
+
+.sort-flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 10em;
+}
+
+table {
+    margin: 0 auto;
+    font-family: arial, sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 80%;
+    min-width: 20em;
+}
+
+td,
+th {
+    border: 1px solid #d0d0d0;
+    /* text-align: center; */
+    padding: 8px;
+}
+
+.title-header, .rate-header {
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+table button {
+    border: none;
+    padding: 0.3em 1em;
+    font-weight: bold;
+    color: whitesmoke;
+    border-radius: 0.2em;
+    text-shadow: 0px 0px 5px #000000;
+    cursor: pointer;
+}
+
+.read-button {
+    background-color: #588c7e;
+}
+
+.update-button {
+    background-color: #eecc5b;
+}
+
+.delete-button {
+    background-color: #d96459;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.modal {
+    position: absolute;
+    top: 10vh;
+    left: 150%;
+    width: 60vw;
+    min-width: 15em;
+    height: fit-content;
+    background-color: #4d8cf5;
+    border-radius: 1em;
+    text-align: center;
+    transition: left .5s;
+    transform: translateX(-50%)
+}
+
+.modal .rate {
+    display: flex;
+    width: 8em;
+    height: 3em;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1em auto;
+    border-radius: 0.4em;
+}
+
+.modal p {
+    padding: 0 2em;
+    padding-bottom: 2em;
+}
+
+.modal.open {
+    left: 50vw;
+}
+
+.modal .close-button {
+    margin-bottom: 1em;
+}
+
+.sort-by {
+    width: 8em;
+}
+
+.delete-notification {
+    position: fixed;
+    width: 12em;
+    height: 3em;
+    background-color: #da4c3f;
+    right: 1em;
+    top: 1em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    opacity: 0;
+    transition: .5s;
+}
